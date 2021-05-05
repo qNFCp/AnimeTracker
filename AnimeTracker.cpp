@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//char deskpath[255]=	{"E:\\OneDrive\\×ÀÃæ\\"};
+//char deskpath[255]=	{"E:\\OneDrive\\æ¡Œé¢\\"};
 //char deskpath[255]={"\%userprofile\%\\desktop\\"};
 char del[255];
 char rss[3253],key[610];
@@ -32,14 +32,14 @@ int mikan(){
 	string link;
 	int times=0;
 	while(cin>>link){
-		if(link.rfind("url=",0)==0){ //ËÑË÷ÄÚÈİ "url="
-			link.erase(0,5);//É¾³ıÇ°5Î»×Ö·û 
-			//replace(link.begin(),link.end(),'\"','\0');	//Ìæ»»"ºÅ
-			link.erase(link.end()-1,link.end());//É¾³ıÄ©Î»
+		if(link.rfind("url=",0)==0){ //æœç´¢å†…å®¹ "url="
+			link.erase(0,5);//åˆ é™¤å‰5ä½å­—ç¬¦ 
+			//replace(link.begin(),link.end(),'\"','\0');	//æ›¿æ¢"å·
+			link.erase(link.end()-1,link.end());//åˆ é™¤æœ«ä½
 			cout<<link<<'\n';
 			times++;
 		}
-		if(link.rfind("</rss>",0)==0)//ÅĞ¶Ï½áÊø¶ÁÈë 
+		if(link.rfind("</rss>",0)==0)//åˆ¤æ–­ç»“æŸè¯»å…¥ 
 			break;	
 	}	
 	return times;
@@ -51,8 +51,8 @@ int acgnx(){
 	int times=0;
 	while(cin>>link){
 		if(link.rfind("url=",0)==0){
-			link.erase(0,5);//É¾³ıÇ°5Î»×Ö·û 
-			link.erase(link.end()-1,link.end());//É¾³ıÄ©Î»
+			link.erase(0,5);//åˆ é™¤å‰5ä½å­—ç¬¦ 
+			link.erase(link.end()-1,link.end());//åˆ é™¤æœ«ä½
 			cout<<link<<'\n';
 			times++;
 		}
@@ -73,8 +73,8 @@ int miobt(){
 	while(cin>>link){
 		if(link.rfind("<link>http://www.miobt.com/show",0)==0){
 			//<link>http://www.miobt.com/show-f6e92dd78b479edde8149478e146f8e3aa364820.html</link>
-			link.erase(0,32);//É¾³ıÇ°32Î»×Ö·û <link>http://www.miobt.com/show-
-			link.erase(link.end()-12,link.end());//É¾³ıÄ©12Î» .html</link>
+			link.erase(0,32);//åˆ é™¤å‰32ä½å­—ç¬¦ <link>http://www.miobt.com/show-
+			link.erase(link.end()-12,link.end());//åˆ é™¤æœ«12ä½ .html</link>
 			cout<<"magnet:?xt=urn:btih:"<<link<<"&tr=http://open.acgtracker.com:1096/announce\n";
 			times++;
 		}
@@ -87,13 +87,13 @@ int miobt(){
 void Display_library(int a){
 	switch(a){
 		case 0:
-			cout<<"\n1.(CN) ÃÛ¸Ì¼Æ»® - Mikan Project\n2.(CN) Ä©ÈÕ„ÓÂşÙYÔ´ì - Project AcgnX Torrent Asia\n3.(CN) MioBT£¨×î¶à20Ìõ½á¹û£©\n4.(EN) Project AcgnX Torrent Global\n";
+			cout<<"\n1.(CN) èœœæŸ‘è®¡åˆ’ - Mikan Project\n2.(CN) æœ«æ—¥å‹•æ¼«è³‡æºåº« - Project AcgnX Torrent Asia\n3.(CN) MioBTï¼ˆæœ€å¤š20æ¡ç»“æœï¼‰\n4.(EN) Project AcgnX Torrent Global\n";
 			break;
 		case 1: 
-			cout<<"1.(CN) ÃÛ¸Ì¼Æ»® - Mikan Project";
+			cout<<"1.(CN) èœœæŸ‘è®¡åˆ’ - Mikan Project";
 		 	break;
 		case 2:
-			cout<<"2.(CN) Ä©ÈÕ„ÓÂşÙYÔ´ì - Project AcgnX Torrent Asia";
+			cout<<"2.(CN) æœ«æ—¥å‹•æ¼«è³‡æºåº« - Project AcgnX Torrent Asia";
 			break;
 		case 3:
 			cout<<"3.(CN) MioBT";
@@ -106,18 +106,18 @@ void Display_library(int a){
 
 int main(){
 	for(int i=0;i<40;i++) cout<<" "; 
-	cout<<"AnimeTracker ·¬¾çÖÖ×ÓÅúÁ¿µ¼³öÆ÷ ver 1.1\n\n£¡£¡±¾³ÌĞò¼°Éú³ÉÄÚÈİ¾ù½ö¹©Ñ§Ï°ÓÃÍ¾ This program and the generated content are for learning purposes only£¡£¡\n";
+	cout<<"AnimeTracker ç•ªå‰§ç§å­æ‰¹é‡å¯¼å‡ºå™¨ ver 0.1\n\nï¼ï¼æœ¬ç¨‹åºåŠç”Ÿæˆå†…å®¹å‡ä»…ä¾›å­¦ä¹ ç”¨é€” This program and the generated content are for learning purposes onlyï¼ï¼\n";
 	Display_library(0);
-	cout<<"ÇëÑ¡ÔñÍøÕ¾¿â(Please select site library)£º\n";
+	cout<<"è¯·é€‰æ‹©ç½‘ç«™åº“(Please select site library)ï¼š\n";
 	cin>>library;
 	//download the RSS document	
-	cout<<"\n×¢£º¶à¸ö²ÎÊıµÄ»°ÖĞ¼ä¿ÉÊ¹ÓÃ¼ÓºÅ¸ô¿ª£¬Àı\nÊ·À³Ä·+»ÃÓ£+1080+mp4+big5\nNote: If there are multiple parameters, you can use + to link them. e.g.\nNeko+movie+japan+anime\n\n";
-	cout<<"¼üÈë²ÎÊı(Key in the parameters):";
+	cout<<"\næ³¨ï¼šå¤šä¸ªå‚æ•°çš„è¯ä¸­é—´å¯ä½¿ç”¨åŠ å·éš”å¼€ï¼Œä¾‹\nå²è±å§†+å¹»æ¨±+1080+mp4+big5\nNote: If there are multiple parameters, you can use + to link them. e.g.\nNeko+movie+japan+anime\n\n";
+	cout<<"é”®å…¥å‚æ•°(Key in the parameters):";
 	cin>>key;
 	
-	//¶ÁÈë¼°Ğ´ÈëÁ¬½Ó 
+	//è¯»å…¥åŠå†™å…¥è¿æ¥ 
 	freopen("temp.txt", "w", stdout);
-	int times=0; //³õÊ¼»¯¼ÆÊıÆ÷ ÓÃÓÚÅĞ¶Ï½á¹ûÊÇ·ñÎª¿Õ
+	int times=0; //åˆå§‹åŒ–è®¡æ•°å™¨ ç”¨äºåˆ¤æ–­ç»“æœæ˜¯å¦ä¸ºç©º
 	
 	if(library==1){
 		rssdownload("https://mikanani.me/RSS/Search?searchstr=");		
@@ -135,12 +135,12 @@ int main(){
 		times=acgnx();
 	}
 
-	//¶Ï¿ªÎÄ¼şÁ¬½Ó 
+	//æ–­å¼€æ–‡ä»¶è¿æ¥ 
 	fclose(stdin);
 	fclose(stdout);
 	
 	dell("temp.xml");
-	//ËÑË÷½á¹ûÎª¿ÕÊ± É¾³ı¿ÕÎÄ¼ş ²¢ÁôÏÂ´íÎóÈÕÖ¾
+	//æœç´¢ç»“æœä¸ºç©ºæ—¶ åˆ é™¤ç©ºæ–‡ä»¶ å¹¶ç•™ä¸‹é”™è¯¯æ—¥å¿—
 	if(times==0){
 		dell("temp.txt");
 		freopen("AnimeTracker_ErrorLog.txt", "w", stdout);
@@ -150,7 +150,7 @@ int main(){
 		return 0;
 	}
 	
-	//ĞŞ¸ÄÎÄ¼şÃû
+	//ä¿®æ”¹æ–‡ä»¶å
 	char rename[255]={0};
 	sprintf(rename,"ren \"temp.txt\" %s.txt\"",key);
 	cout<<rename; 
