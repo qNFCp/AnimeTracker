@@ -15,7 +15,7 @@ Tools for downloading Bangumi
 #### 1. AnimeTracker.cpp 
 + √ 下载 ___Download___
 + √ 删除 ___Delete___
-+ √ 识别 ___Content identification___
++ √ 识别 ___Link identification___
 
 #### 2. AnimeAuto.cpp
 + ○ 链接记录 ___Record links___
